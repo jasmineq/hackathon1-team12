@@ -9,6 +9,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent} from './footer/footer.component';
+import { QuizService } from './quiz/quiz.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { FooterComponent} from './footer/footer.component';
       { path: 'quiz/:id', component: QuizComponent }
     ])
   ],
-  providers: [],
+  providers: [
+    QuizService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
