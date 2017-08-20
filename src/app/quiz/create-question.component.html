@@ -1,1 +1,40 @@
-<h1>Create Component</h1>
+<h1>Create Questions for Quiz {{quizID}}</h1>
+<hr>
+<div class="col-md-4">
+  <form #createQuestionForm="ngForm" (ngSubmit)="createQuestion(createQuestionForm.value)" autocomplete="off">
+    <div class="form-group">
+      <label for="questionText">Question Text</label>
+      <input [(ngModel)]="questionText" type="text" name="questionText" id="questionText" class="form-control" placeholder="Question Text..." required>
+    </div>
+    
+    <div class="form-group">
+      <label for="choiceA">Choice A</label>
+      <input [(ngModel)]="choiceA" type="text" name="choiceA" id="choiceA" class="form-control" placeholder="Choice a..." required>
+    </div>
+    <div class="form-group">
+      <label for="choicesB">Choice B</label>
+      <input [(ngModel)]="choiceB" type="text" name="choiceB" id="choiceB" class="form-control" placeholder="Choice b..." required>
+    </div>
+    <div class="form-group">
+      <label for="choiceC">Choice C</label>
+      <input [(ngModel)]="choiceC" type="text" name="choiceC" id="choiceC" class="form-control" placeholder="Choice c..." required>
+    </div>
+    <div class="form-group">
+      <label for="choiceD">Choice D</label>
+      <input [(ngModel)]="choiceD" type="text" name="choiceD" id="choiceD" class="form-control" placeholder="Choice d..." required>
+    </div>
+      
+    <div class="form-group">
+      <label for="answer">Answer</label>
+      <input [(ngModel)]="answer" type="text" name="answer" id="answer" class="form-control" placeholder="Answer..." required>
+    </div>
+    
+    <div class="form-group">
+      <label for="explanation">Explanation</label>
+      <input [(ngModel)]="explanation" type="text" name="explanation" id="explanation" class="form-control" placeholder="Explanation..." required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create Question</button>
+
+  </form>
+</div>
