@@ -4,10 +4,19 @@
 }
 
 .btn {
-  margin-top: 5%;
+  margin-top: 2%;
+  margin-right: 3%;
 }
 
 ul {
   list-style-type: none;
 }
 
+div {
+  height: 100%;
+  padding: 30px;
+}
+
+h1 {
+  color: #A6CCD7;
+}
