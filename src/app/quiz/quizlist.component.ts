@@ -17,4 +17,10 @@ export class QuizlistComponent implements OnInit {
       this.quizzes = quizzes;
     });
   }
+
+  quizCompleted(id) {
+    const completedString = localStorage.getItem('completed');
+    const completed = completedString ? JSON.parse(completedString) : [];
+    return completed.length && completed.includes(id);
+  }
 }

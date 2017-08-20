@@ -1,6 +1,8 @@
 <div class='col-md-4 wrapper'>
   <ul>
     <li *ngFor="let quiz of quizzes">
-    <button [routerLink]="['/quiz/',quiz.id]" type="button" class="btn btn-success">{{quiz.name}}</button></li>
+      <button [routerLink]="['/quiz/',quiz.id]" type="button" class="btn btn-success">{{quiz.name}}</button>
+      <p *ngIf="quizCompleted(quiz.id)" class="white">✅ Completed</p>
+    </li>
 </ul>
 </div>
