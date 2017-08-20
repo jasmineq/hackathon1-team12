@@ -1,9 +1,13 @@
 <div>
   <h1>Quiz List</h1>
+  <div class="score">
+    <h4>Score</h4>
+    <p>Your total score is {{score}}</p>
+  </div>
   <ul>
     <li *ngFor="let quiz of quizzes">
       <button [routerLink]="['/quiz/',quiz.id]" type="button" class="btn btn-success">{{quiz.name}}</button>
       <p *ngIf="quizCompleted(quiz.id)" class="white">✅ Completed</p>
     </li>
-</ul>
+  </ul>
 </div>
