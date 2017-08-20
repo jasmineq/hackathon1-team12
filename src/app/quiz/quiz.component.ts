@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { IQuestion } from './../data/question.model';
 import { IQuiz } from './../data/quiz.model';
 
-
 @Component({
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css']
@@ -53,10 +52,13 @@ export class QuizComponent implements OnInit {
 
     if (this.currentQuestion !== this.questions.length) {
       this.chosenAnswer = null;
+    } else {
+      const completedString = localStorage.getItem('completed');
+      const completed = completedString ? JSON.parse(completedString) : [];
+      localStorage.setItem(
+        'completed',
+        JSON.stringify([...completed, this.quiz.id])
+      );
     }
   }
 }
-
-
-
-
