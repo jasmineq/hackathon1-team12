@@ -7,6 +7,7 @@ h1 {
 }
 
 h2 {
+  padding: 2px;
   font-size: 2em;
   background-color: #012A36;
   color: #A6CCD7;
@@ -16,4 +17,5 @@ h2 {
 
 .header {
   background-color: #012A36;
+  padding: 2px;
 }

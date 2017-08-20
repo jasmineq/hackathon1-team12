@@ -19,7 +19,9 @@
     </p>
   </div>
 
-  <div *ngIf="currentQuestion === questions.length">
-    You finished the Quiz! You got {{numberCorrect}} out of {{questions.length}} questions right.
+  <div *ngIf="currentQuestion === questions.length" class="results">
+    <h3>
+      You finished the Quiz! You got {{numberCorrect}} out of {{questions.length}} questions right.
+    </h3>
   </div>
 </div>
