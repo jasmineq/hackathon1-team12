@@ -1,4 +1,8 @@
 <div>{{question.questionText}}</div>
 <ul>
-  <li *ngFor = "let choice of question.choices; let index = index">{{getLetter(index)}} {{choice}}</li>
+  <li *ngFor = "let choice of question.choices; let index = index">
+    <button class="btn btn-primary" (click)="answer(index)">
+      {{getLetter(index)}}: {{choice}}
+    </button>
+  </li>
 </ul>

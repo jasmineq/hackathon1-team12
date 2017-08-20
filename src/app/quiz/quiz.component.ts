@@ -12,5 +12,8 @@ export class QuizComponent implements OnInit {
   ngOnInit() {
     this.questions = davedata;
   }
-}
 
+  answer(choice) {
+    alert(choice);
+  }
+}

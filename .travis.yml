@@ -4,7 +4,7 @@ node_js:
 
 cache:
   directories:
-    - $(npm config get prefix)/bin/ng
+    - $(npm config get prefix)/bin
     - node_modules
 
 branches:
