@@ -1,5 +1,6 @@
 import { QuizService } from './quiz.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IQuestion } from './../data/question.model';
 import { IQuiz } from './../data/quiz.model';
 
@@ -15,16 +16,23 @@ export class QuizComponent implements OnInit {
   numberCorrect: number;
   currentQuestion: number;
 
-  constructor(private quizService: QuizService) {}
+  constructor(
+    private quizService: QuizService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.quiz = this.quizService.getQuiz(0);
-    this.questions = this.quizService.getQuestions(0);
     this.chosenAnswer = null;
     this.numberCorrect = 0;
     this.currentQuestion = 0;
-    console.log(this.quiz);
-    console.log(this.questions);
+
+    this.route.params.subscribe(params => {
+      console.log(params['id']);
+      this.questions = this.quizService.getQuestions(+params['id']);
+      console.log(this.questions);
+      this.quiz = this.quizService.getQuiz(+params['id']);
+      console.log(this.quiz);
+    });
   }
 
   answer(choice) {
@@ -42,7 +50,7 @@ export class QuizComponent implements OnInit {
   nextQuestion() {
     this.currentQuestion += 1;
 
-    if (this.currentQuestion !==              this.questions.length) {
+    if (this.currentQuestion !== this.questions.length) {
       this.chosenAnswer = null;
     }
   }

@@ -1,3 +1,43 @@
-h1 {
-  font-family: "Unbuntu Mono";
+.questionDiv {
+    display: inline-block;
+    border: .5px solid lawngreen;
+    background-color: black;
+    color: lawngreen;
+    font-family: 'Saira', sans-serif; 
+    padding: 20px;
+    font-size: 1.5em;
+    margin: 3%;
+    height: 500px;
+
+  }
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    background-color: black;
+    color: lawngreen;
+    border: .1px solid #7BFC00;
+    margin: auto;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: lawngreen;
+    color: black;
+}
+
+.question {
+    /* padding: 1px; */
+    /* margin-top: 1%; */
+}
+
+.answers {
+    display: block;
+    margin-top: 1%;
+}
+
+.allTheStuff {
+    margin-top: 10%;
 }

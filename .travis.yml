@@ -15,7 +15,7 @@ before_script:
   - ng || npm install -g @angular/cli
 
 script:
-  - ng build --prod
+  - ng build --prod -bh https://nss-alumni.github.io/hackathon1-team12/
 
 deploy:
   provider: pages
