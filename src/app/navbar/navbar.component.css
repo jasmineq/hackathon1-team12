@@ -1,0 +1,20 @@
+div.navbar {
+    background-color: #2C7F96;
+    font-family: 'Saira', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.navbar-nav>li>a {
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Saira', sans-serif;
+}
+
+.navbar-nav>li>a:hover {
+    background-color: #012A36;
+}
+
+.navbar-nav>li>a:visited {
+    color:white;
+}
