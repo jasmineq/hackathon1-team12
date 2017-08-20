@@ -23,4 +23,12 @@ export class QuizService {
   getQuestions(quizId) {
     return this.db.list('/questions', { query: {equalTo: quizId, orderByChild: 'quiz_id'}});
   }
+
+  creatQuiz(quizValues) {
+    this.db.list('/quizzes').push(quizValues);
+  }
+
+  createQuestion(questionValues) {
+    this.db.list('/questions').push(questionValues);
+  }
 }
