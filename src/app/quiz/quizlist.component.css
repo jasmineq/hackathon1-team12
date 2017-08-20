@@ -52,3 +52,8 @@ h1 {
   margin-bottom: 0;
   margin-top: 11px;
 }
+
+.score {
+  color: white;
+  padding: 0;
+}
