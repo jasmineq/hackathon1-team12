@@ -10,11 +10,11 @@ import { IQuiz } from './../data/quiz.model';
 export class QuizlistComponent implements OnInit {
   quizzes: IQuiz[];
 
-
   constructor(private quizService: QuizService) {}
 
   ngOnInit() {
-    this.quizzes = this.quizService.getQuizzes();
-    console.log(this.quizzes);
+    this.quizService.getQuizzes().subscribe(quizzes => {
+      this.quizzes = quizzes;
+    });
   }
 }

@@ -1,16 +1,27 @@
-<h1>quiz component</h1>
 
-<app-question
-  *ngIf = "chosenAnswer === null"
-  (onAnswer)="answer($event)"
-  [question]="questions[currentQuestion]"></app-question>
+<div *ngIf="questions && quiz">
+  <h1>{{quiz.name}}</h1>
+  <app-question
+    *ngIf = "chosenAnswer === null"
+    (onAnswer)="answer($event)"
+    [question]="questions[currentQuestion]"></app-question>
 
-<div *ngIf="chosenAnswer !== null && currentQuestion < questions.length">
-  {{answerIsCorrect(chosenAnswer) ? "You got it right" : "that was incorrect."}}
-  {{questions[currentQuestion].explanation}}
-  <button (click)="nextQuestion()">Next Question</button>
-</div>
+  <div *ngIf="chosenAnswer !== null && currentQuestion < questions.length"
+       class="results">
+    <p>
+      {{answerIsCorrect(chosenAnswer) ? "You got it right" : "that was incorrect."}}
+    </p>
+    <p>
+      {{questions[currentQuestion].explanation}}
+    </p>
+    <p>
+      <button (click)="nextQuestion()">Next Question</button>
+    </p>
+  </div>
 
-<div *ngIf="currentQuestion === questions.length">
-  You finished the Quiz! You got {{numberCorrect}} out of {{questions.length}} questions right.
+  <div *ngIf="currentQuestion === questions.length" class="results">
+    <h3>
+      You finished the Quiz! You got {{numberCorrect}} out of {{questions.length}} questions right.
+    </h3>
+  </div>
 </div>

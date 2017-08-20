@@ -11,6 +11,13 @@ import { HeaderComponent } from './header/header.component';
 import { QuizService } from './quiz/quiz.service';
 import { FooterComponent } from './footer/footer.component';
 import { QuestionComponent } from './question/question.component';
+import { environment } from './../environments/environment';
+import { CreateQuestionComponent } from './quiz/create-question.component';
+
+// firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 @NgModule({
@@ -22,14 +29,20 @@ import { QuestionComponent } from './question/question.component';
     NavbarComponent,
     HeaderComponent,
     FooterComponent,
-    QuestionComponent
+    QuestionComponent,
+    CreateQuestionComponent
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase, 'gitflash'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
+      { path: 'quiz/new/question', component: CreateQuestionComponent },
+      { path: 'quiz/:id', component: QuizComponent },
       { path: 'quiz', component: QuizlistComponent },
-      { path: 'quiz/:id', component: QuizComponent }
+      { path: '', redirectTo: '/home', pathMatch: 'full' }
     ])
   ],
   providers: [
