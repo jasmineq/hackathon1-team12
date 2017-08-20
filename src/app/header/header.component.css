@@ -1,3 +1,19 @@
 h1 {
-  background-color: blue;
+  font-size: 5em;
+  background-color: #012A36;
+  color: #A6CCD7;
+  font-family: 'Saira', sans-serif;
+  
+}
+
+h2 {
+  font-size: 2em;
+  background-color: #012A36;
+  color: #A6CCD7;
+  font-family: 'Saira', sans-serif;
+  
+}
+
+.header {
+  background-color: #012A36;
 }

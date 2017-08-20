@@ -8,6 +8,10 @@ import { QuizlistComponent } from './quiz/quizlist.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
+import { QuizService } from './quiz/quiz.service';
+import { FooterComponent } from './footer/footer.component';
+import { QuestionComponent } from './question/question.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +20,9 @@ import { HeaderComponent } from './header/header.component';
     QuizlistComponent,
     QuizComponent,
     NavbarComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,9 @@ import { HeaderComponent } from './header/header.component';
       { path: 'quiz/:id', component: QuizComponent }
     ])
   ],
-  providers: [],
+  providers: [
+    QuizService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

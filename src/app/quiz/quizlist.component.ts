@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IQuiz } from '../data/quiz.model';
-import { quizzes } from '../data/davedata';
+
+import { QuizService } from './quiz.service';
+import { IQuiz } from './../data/quiz.model';
 
 @Component({
   templateUrl: './quizlist.component.html',
@@ -9,10 +10,11 @@ import { quizzes } from '../data/davedata';
 export class QuizlistComponent implements OnInit {
   quizzes: IQuiz[];
 
+
+  constructor(private quizService: QuizService) {}
+
   ngOnInit() {
-    this.quizzes = quizzes;
+    this.quizzes = this.quizService.getQuizzes();
     console.log(this.quizzes);
-  };
-
-};
-
+  }
+}
