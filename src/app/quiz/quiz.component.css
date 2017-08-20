@@ -1,3 +1,7 @@
+h1 {
+    color: #A6CCD7;
+}
+
 .results {
     display: inline-block;
     border: .5px solid lawngreen;
