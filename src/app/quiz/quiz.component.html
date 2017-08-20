@@ -1,2 +1,6 @@
 <h1>quiz component</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta itaque accusamus cupiditate incidunt possimus sint veritatis et modi, excepturi necessitatibus totam commodi error maxime recusandae inventore unde consequatur a cum.</p>
+
+<app-question
+  (onAnswer)="answer($event)"
+  [question]="questions[0]"></app-question>
