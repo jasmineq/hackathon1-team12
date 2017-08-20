@@ -12,6 +12,9 @@ import { Router } from '@angular/router';
 })
 export class CreateQuizComponent implements OnInit {
   nextID: number;
+  name: string;
+  category: string;
+  difficulty: string;
 
   constructor(
     private db: AngularFireDatabase,
