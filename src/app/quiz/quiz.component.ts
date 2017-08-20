@@ -27,11 +27,12 @@ export class QuizComponent implements OnInit {
     this.currentQuestion = 0;
 
     this.route.params.subscribe(params => {
-      console.log(params['id']);
-      this.questions = this.quizService.getQuestions(+params['id']);
-      console.log(this.questions);
-      this.quiz = this.quizService.getQuiz(+params['id']);
-      console.log(this.quiz);
+      this.quizService.getQuiz(+params['id']).subscribe(quizzes => {
+        this.quiz = quizzes[0];
+      });
+      this.quizService.getQuestions(+params['id']).subscribe(questions => {
+        this.questions = questions;
+      });
     });
   }
 

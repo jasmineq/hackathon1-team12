@@ -4,19 +4,23 @@ import { davedata, quizzes } from './../data/davedata';
 import { IQuiz } from './../data/quiz.model';
 import { IQuestion } from './../data/question.model';
 
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import * as firebase from 'firebase/app';
+
 @Injectable()
 export class QuizService {
 
+  constructor(private db: AngularFireDatabase) {}
+
   getQuizzes() {
-    return quizzes;
+    return this.db.list('/quizzes');
   }
 
   getQuiz(id) {
-    return quizzes.find(quiz => quiz.id === id);
+    return this.db.list('/quizzes', { query: {equalTo: id, orderByChild: 'id'}});
   }
 
   getQuestions(quizId) {
-    const filteredQuestions = davedata.filter(questions => questions.quiz_id === quizId);
-    return filteredQuestions;
+    return this.db.list('/questions', { query: {equalTo: quizId, orderByChild: 'quiz_id'}});
   }
 }
