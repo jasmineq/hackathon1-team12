@@ -1,17 +1,19 @@
 <h1>quiz component</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta itaque accusamus cupiditate incidunt possimus sint veritatis et modi, excepturi necessitatibus totam commodi error maxime recusandae inventore unde consequatur a cum.</p>
 
-<app-question
-  *ngIf = "chosenAnswer === null"
-  (onAnswer)="answer($event)"
-  [question]="questions[currentQuestion]"></app-question>
-
-<div *ngIf="chosenAnswer !== null && currentQuestion < questions.length">
-  {{answerIsCorrect(chosenAnswer) ? "You got it right" : "that was incorrect."}}
-  {{questions[currentQuestion].explanation}}
-  <button (click)="nextQuestion()">Next Question</button>
-</div>
-
-<div *ngIf="currentQuestion === questions.length">
-  You finished the Quiz! You got {{numberCorrect}} out of {{questions.length}} questions right.
+<div *ngIf="questions">
+  <app-question
+    *ngIf = "chosenAnswer === null"
+    (onAnswer)="answer($event)"
+    [question]="questions[currentQuestion]"></app-question>
+  
+  <div *ngIf="chosenAnswer !== null && currentQuestion < questions.length">
+    {{answerIsCorrect(chosenAnswer) ? "You got it right" : "that was incorrect." | async }}
+    {{questions[currentQuestion].explanation | async }}
+    <button (click)="nextQuestion()">Next Question</button>
+  </div>
+  
+  <div *ngIf="currentQuestion === questions.length">
+    You finished the Quiz! You got {{numberCorrect | async }} out of {{questions.length | async }} questions right.
+  </div>
 </div>
