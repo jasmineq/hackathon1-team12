@@ -12,6 +12,9 @@ import { IQuiz } from './../data/quiz.model';
 export class QuizComponent implements OnInit {
   quiz: IQuiz;
   questions: IQuestion[];
+  chosenAnswer: number | null;
+  numberCorrect: number;
+  currentQuestion: number;
 
   constructor(
     private quizService: QuizService,
@@ -19,6 +22,10 @@ export class QuizComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.chosenAnswer = null;
+    this.numberCorrect = 0;
+    this.currentQuestion = 0;
+
     this.route.params.subscribe(params => {
       console.log(params['id']);
       this.questions = this.quizService.getQuestions(+params['id']);
@@ -29,6 +36,26 @@ export class QuizComponent implements OnInit {
   }
 
   answer(choice) {
-    alert(choice);
+    if (this.answerIsCorrect(choice)) {
+      this.numberCorrect += 1;
+    }
+    this.chosenAnswer = choice;
+  }
+  answerIsCorrect(choice) {
+    const question = this.questions[this.currentQuestion];
+    const correctAnswer = question.choices.indexOf(question.answer);
+
+    return choice === correctAnswer;
+  }
+  nextQuestion() {
+    this.currentQuestion += 1;
+
+    if (this.currentQuestion !== this.questions.length) {
+      this.chosenAnswer = null;
+    }
   }
 }
+
+
+
+
