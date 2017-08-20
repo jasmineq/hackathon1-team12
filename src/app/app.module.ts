@@ -10,6 +10,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { QuizService } from './quiz/quiz.service';
+import { ScoreService } from './quiz/score.service';
 import { FooterComponent } from './footer/footer.component';
 import { QuestionComponent } from './question/question.component';
 import { environment } from './../environments/environment';
@@ -20,7 +21,6 @@ import { CreateQuestionComponent } from './quiz/create-question.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
 
 @NgModule({
   declarations: [
@@ -50,9 +50,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
       { path: '', redirectTo: '/home', pathMatch: 'full' }
     ])
   ],
-  providers: [
-    QuizService
-  ],
+  providers: [QuizService, ScoreService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

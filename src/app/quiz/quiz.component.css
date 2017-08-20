@@ -1,0 +1,31 @@
+h1 {
+    color: #A6CCD7;
+}
+
+.results {
+    display: inline-block;
+    border: .5px solid lawngreen;
+    background-color: black;
+    color: lawngreen;
+    font-family: 'Saira', sans-serif;
+    padding: 20px;
+    font-size: 1.5em;
+    margin: 3%;
+    height: 500px;
+    max-width: 800px;
+    min-width: 800px;
+    width: 90%;
+}
+
+button {
+    background-color: black;
+    color: lawngreen;
+    border: .1px solid #7BFC00;
+    margin: auto;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: lawngreen;
+    color: black;
+}

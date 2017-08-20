@@ -3,6 +3,7 @@ div.navbar {
     font-family: 'Saira', sans-serif;
     color: white;
     text-align: center;
+    display: block;
 }
 
 .navbar-nav>li>a {
