@@ -1,4 +1,5 @@
 import { IQuestion } from './question.model';
+import { IQuiz } from './quiz.model';
 
 export const davedata: IQuestion[] = [
   {
@@ -312,63 +313,24 @@ export const davedata: IQuestion[] = [
 
 ];
 
-Quiz = {
-  id : 4,
-  category : 'Git',
-  difficulty : 'medium',
-  name : ''
-},
-Quiz = {
-  id : 4,
-  category : 'Git',
-  difficulty : 'easy',
-  name : ''
-},
-Quiz = {
-  id : 4,
-  category : 'Git',
-  difficulty : 'easy',
-  name : ''
-},
-Quiz = {
-  id : 4,
-  category : 'Git',
-  difficulty : 'easy',
-  name : ''
-},
-Quiz = {
-  id : 4,
-  category : 'Git',
-  difficulty : 'easy',
-  name : ''
-},
-Quiz = {
-  id : 4
-  category : 'Git',
-  difficulty : 'easy',
-  name : ''
-},
-Quiz = {
-  id : 4,
-  category : 'Git',
-  difficulty : 'easy',
-  name : ''
-},
-Quiz = {
-  id : 4,
-  category : 'Git',
-  difficulty : 'easy',
-  name : ''
-},
-Quiz = {
-  id : 4,
-  category : 'Git',
-  difficulty : 'easy',
-  name : ''
-},
-Quiz = {
-  id : 4,
-  category : 'Git',
-  difficulty : 'medium',
-  name : ''
-},
+export const quizzes: IQuiz[] = [
+
+  {
+    id: 0;
+    category: 'quiz',
+    difficulty: 'medium',
+    name: 'Git Log'
+  },
+  {
+    id: 3,
+    category: 'quiz',
+    difficulty: 'easy',
+    name: 'Git Introduction'
+  },
+  {
+    id: 4,
+    category: 'quiz',
+    difficulty: 'easy',
+    name: 'Git Essentials'
+  }
+];
