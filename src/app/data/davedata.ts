@@ -316,7 +316,7 @@ export const davedata: IQuestion[] = [
 export const quizzes: IQuiz[] = [
 
   {
-    id: 0;
+    id: 0,
     category: 'quiz',
     difficulty: 'medium',
     name: 'Git Log'
