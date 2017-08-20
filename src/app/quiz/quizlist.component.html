@@ -1,5 +1,4 @@
 <div class='col-md-4 wrapper'>
-  <h1>Quiz List</h1>
   <ul>
     <li *ngFor="let quiz of quizzes">
     <button [routerLink]="['/quiz/',quiz.id]" type="button" class="btn btn-success">{{quiz.name}}</button></li>
